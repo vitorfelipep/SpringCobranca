@@ -29,7 +29,7 @@ public class Titulo {
 	private Date dataVencimento;
 	
 	@NumberFormat(pattern = "#,##0.00")
-	private BigDecimal valor;
+	private BigDecimal valor; 
 
 	@Enumerated(EnumType.STRING)
 	private StatusTitulo status;

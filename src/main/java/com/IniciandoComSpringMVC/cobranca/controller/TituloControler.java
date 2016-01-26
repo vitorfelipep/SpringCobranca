@@ -1,4 +1,4 @@
-package com.IniciandoComSpringMVC.cobranca.controller;
+	package com.IniciandoComSpringMVC.cobranca.controller;
 
 import java.util.Arrays;
 import java.util.List;
@@ -62,6 +62,12 @@ public class TituloControler {
 		return mv;
 	}
 	
+	@RequestMapping(value="{codigo}" , method = RequestMethod.DELETE)
+	public String excluir(@PathVariable Long codigo){
+		titulos.delete(codigo);
+		
+		return "redirect:/titulos";
+	}
 	
 	@ModelAttribute("todoStatusTitulo")
 	public List<StatusTitulo> todosStatusTitulo(){

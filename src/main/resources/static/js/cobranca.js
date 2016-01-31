@@ -6,7 +6,7 @@ $('#confirmacaoExclusaoModal').on('show.bs.modal', function(event){
 	
 	var modal = $(this);
 	var form = modal.find('form');
-	var action = form.attr('action');
+	var action = form.data('url-base');
 	
 	if(!action.endsWith('/')){
 		action += '/';
@@ -15,4 +15,9 @@ $('#confirmacaoExclusaoModal').on('show.bs.modal', function(event){
 	form.attr('action', action + codigoTitulo);
 	
 	modal.find('.modal-body span').html('Tem certeza que você deseja excluir o título <strong>' + descricao + '</strong>?')
-})
+});
+
+$(function(){
+	$('[rel="tooltip"]').tooltip();
+	$('.js-currency').maskMoney({decimal: ',', thousands: '.', allowZero: true});
+});
